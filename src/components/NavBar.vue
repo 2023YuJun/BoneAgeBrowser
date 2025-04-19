@@ -45,16 +45,18 @@
   
   <style scoped>
   .navbar {
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    height: 60px;
-    background: #2c3e50;
-    color: white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  height: 60px;
+  background: #2c3e50;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: fixed;
+  top: 0; /* 新增关键定位 */
+  left: 0; /* 确保横向铺满 */
+  right: 0; /* 确保横向铺满 */
+  z-index: 1000;
   }
   
   .left-section {

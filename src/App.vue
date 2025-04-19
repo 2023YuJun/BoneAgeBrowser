@@ -32,12 +32,13 @@ body {
 }
 
 .content-container {
-  margin-right: 300px; /* 右侧边栏宽度 */
-  margin-left: 0; /* 初始左侧边栏隐藏 */
-  margin-top: 60px; /* 导航栏高度 */
+  margin-right: 300px;
   padding: 20px;
   min-height: calc(100vh - 60px);
   transition: margin-left 0.3s ease;
+  /* 直接通过定位避开导航栏 */
+  position: relative;
+  top: 60px; /* 用 top 替代 margin-top */
 }
 
 /* 当左侧边栏显示时调整内容区域 */
