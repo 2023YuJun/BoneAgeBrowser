@@ -1,5 +1,9 @@
 <template>
   <NavBar :site-info="siteConfig" @toggle-left-sidebar="toggleLeftSidebar" />
+
+   <!-- 新增底部菜单 -->
+   <BottomBar />
+
   <SideBarLeft v-if="showLeftSidebar" :visible="showLeftSidebar" />
   <main class="content-container">
     <router-view />
@@ -12,10 +16,11 @@ import { ref } from 'vue'
 import NavBar from './components/NavBar.vue'
 import SideBarLeft from './components/SideBarLeft.vue'
 import SideBarRight from './components/SideBarRight.vue'
+import BottomBar from './components/BottomBar.vue'
 
 const siteConfig = {
   logo: './src/assets/logo.png',
-  name: '医学影像系统'
+  name: '骨龄评估系统'
 }
 
 const showLeftSidebar = ref(false)
@@ -44,5 +49,13 @@ body {
 /* 当左侧边栏显示时调整内容区域 */
 .content-container.with-left-sidebar {
   margin-left: 300px;
+}
+
+.content-container {
+  margin-bottom: 1.5em; /* 为底部菜单留出空间 */
+}
+
+.SideBarLeft { /* 根据实际类名调整 */
+  top: calc(60px + 1.5em); /* 导航栏高度 + 底部菜单高度 */
 }
 </style>
