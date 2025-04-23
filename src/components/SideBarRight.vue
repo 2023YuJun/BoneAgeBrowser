@@ -116,7 +116,7 @@
             >
               <span class="bone-name">{{ item.name }}</span>
               <div class="bone-score">
-                <span class="dash-line"></span>
+                <!-- <span class="dash-line"></span> -->
                 <span class="score-value">{{ item.score || '待计算' }}</span>
               </div>
             </div>
@@ -320,6 +320,7 @@ const clearText = () => {
   font-size: 0.9em;
   color: #2c3e50;
   width: 80px;
+  text-align:left;
 }
 
 /* 4. 动态虚线实现 */
@@ -344,7 +345,6 @@ const clearText = () => {
   text-align: right;
   color: #7f8c8d;
   min-width: 60px;
-  text-align: right;
   font-family: monospace;
   font-size: 0.85em;
 }

@@ -22,7 +22,7 @@
   
   <style scoped>
   .sidebar-left {
-    width: 300px;
+    width: 230px;
     height: calc(100vh - 60px);
     background: #ffffff;
     position: fixed;

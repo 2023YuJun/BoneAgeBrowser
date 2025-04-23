@@ -10,16 +10,29 @@
             v-for="(button, index) in buttons" 
             :key="index"
             class="nav-button"
-            @click="handleButtonClick(button)"
-          >
-            {{ button }}
+          :class="{ 'has-separator': button === '更多' }"
+          @click="handleButtonClick(button)"
+        >
+          {{ button }}
           </button>
         </div>
       </div>
+
+      <GuidelinePopup 
+      :visible="showGuideline" 
+      :logo="siteInfo.logo"
+      @close="showGuideline = false"
+    />
+
     </nav>
-  </template>
+</template>
   
-  <script setup>
+<script setup>
+import { ref } from 'vue'
+import GuidelinePopup from './GuidelinePopup.vue'
+
+
+
   defineProps({
     siteInfo: {
       type: Object,
@@ -35,21 +48,27 @@
     '更多', '收藏病例', '中华05指南',
     '操作指南', '返回列表'
   ]
+
+  const showGuideline = ref(false)
   
-  const handleButtonClick = (buttonName) => {
-    if (buttonName === '序列') {
-      emit('toggle-left-sidebar')
-    }
+// 修改按钮处理函数
+const handleButtonClick = (buttonName) => {
+  if (buttonName === '序列') {
+    emit('toggle-left-sidebar')
+  } else if (buttonName === '中华05指南') {
+    showGuideline.value = true
   }
-  </script>
+}
+</script>
   
-  <style scoped>
+<style scoped>
   .navbar {
   display: flex;
+  gap: 15px;
   align-items: center;
   padding: 0 20px;
   height: 60px;
-  background: #2c3e50;
+  background: #9fb2c4;
   color: white;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   position: fixed;
@@ -92,7 +111,33 @@
     transition: background 0.3s;
   }
   
+/* 为"更多"按钮添加特殊样式 */
+.has-separator {
+  position: relative;
+  margin-right: 80px; /* 增加右侧间距 */
+}
+
+/* 添加分隔线伪元素 */
+.has-separator::after {
+  content: "";
+  position: absolute;
+  right: -48px; /* 调整到间隙中间位置 */
+  top: 50%;
+  transform: translateY(-50%);
+  height: 80%;   /*  调整分隔线高度：修改height百分比 */
+  width: 1px;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 2px rgba(0,0,0,0.1);
+}
+
+/* 优化按钮悬停效果
+.nav-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+} */
   .nav-button:hover {
     background: #2980b9;
   }
-  </style>
+
+
+</style>

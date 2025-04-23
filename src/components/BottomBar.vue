@@ -14,29 +14,39 @@
         <span>骨骺点位标注</span>
       </label>
     </div>
-  </template>
+</template>
   
-  <script setup>
+<script setup>
   import { ref } from 'vue'
   
-  const isAnnotationEnabled = ref(false)
-  </script>
   
-  <style scoped>
+  const isAnnotationEnabled = ref(false)
+</script>
+  
+<style scoped>
   .bottom-menu {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 380px; /* 匹配右侧边栏宽度 */
-    height: 1.5em;
-    background: #f8f9fa;
-    border-top: 1px solid #dcdde1;
-    display: flex;
-    align-items: center;
-    padding: 0 15px;
-    z-index: 999;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
-  }
+  /* 新增边框样式 */
+  border: 1px solid #dcdde1;      /* 整体边框 */
+  border-radius: 4px 4px 0 0;     /* 顶部圆角 */
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.08); /* 增强立体感 */
+
+  /* 保持原有定位 */
+  position: fixed;
+  bottom: 0;
+  left: 235px;
+  right: 415px;
+  height: 1.5em;
+  background: #ffffff;            /* 改为纯白背景 */
+  z-index: 1001;
+
+  /* 新增盒子模型计算方式 */
+  box-sizing: border-box;         /* 确保边框包含在高度内 */
+  
+  /* 微调其他样式 */
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+}
   
   .menu-item {
     display: flex;
@@ -52,4 +62,4 @@
     margin-left: 5px;
     cursor: pointer;
   }
-  </style>
+</style>
