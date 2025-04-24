@@ -173,9 +173,18 @@
       </div>
 
       <!-- ========== 新增报告按钮 ========== -->
-      <button class="report-btn">
-        生长发育报告
+      <button class="report-btn" @click="showReportPopup = true">
+      生长发育报告
       </button>
+
+      <!-- 新增报告弹窗 -->
+      <ReportPopup 
+        :visible="showReportPopup"
+        :logo="siteConfig.logo"
+        @close="showReportPopup = false"
+      />
+
+
       </div>
     </div>
   </aside>
@@ -183,6 +192,18 @@
 
 <script setup>
 import { ref, computed, watch, onMounted} from 'vue'  // 必须导入 computed
+import ReportPopup from './ReportPopup.vue'
+
+
+// 新增站点配置（与App.vue保持一致）(生长发育报告)
+const siteConfig = ref({
+  logo: './src/assets/logo.png',
+  name: '骨龄评估系统'
+})
+
+// 新增报告弹窗控制
+const showReportPopup = ref(false)
+
 
 
 // 模式管理
@@ -678,6 +699,7 @@ input:disabled {
   cursor: pointer;
   box-shadow: 0 3px 6px rgba(0,0,0,0.1);
   transition: all 0.3s;
+  z-index: 100; 
 }
 
 .report-btn:hover {

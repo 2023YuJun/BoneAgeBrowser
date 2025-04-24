@@ -269,7 +269,7 @@ const handleBoneClick = (boneName) => {
 /* 主内容区域 */
 .main-content {
   /* height: calc(710px - 60px - 100px - 2px); 总高 - 顶部 - 中间 - 边框 */
-  height: calc(100% - 120px);
+  height: calc(100% - 250px);
   padding: 20px;
 }
 

@@ -18,10 +18,18 @@
         </div>
       </div>
 
+      <!-- 中华05指南弹窗 -->
       <GuidelinePopup 
       :visible="showGuideline" 
       :logo="siteInfo.logo"
       @close="showGuideline = false"
+    />
+
+     <!-- 添加操作指南弹窗 -->
+     <OperationGuidePopup 
+      :visible="showOperationGuide"
+      :logo="siteInfo.logo"
+      @close="showOperationGuide = false"
     />
 
     </nav>
@@ -30,6 +38,7 @@
 <script setup>
 import { ref } from 'vue'
 import GuidelinePopup from './GuidelinePopup.vue'
+import OperationGuidePopup from './OperationGuidePopup.vue'
 
 
 
@@ -50,6 +59,7 @@ import GuidelinePopup from './GuidelinePopup.vue'
   ]
 
   const showGuideline = ref(false)
+  const showOperationGuide = ref(false)
   
 // 修改按钮处理函数
 const handleButtonClick = (buttonName) => {
@@ -57,6 +67,8 @@ const handleButtonClick = (buttonName) => {
     emit('toggle-left-sidebar')
   } else if (buttonName === '中华05指南') {
     showGuideline.value = true
+  } else if (buttonName === '操作指南') {
+    showOperationGuide.value = true
   }
 }
 </script>

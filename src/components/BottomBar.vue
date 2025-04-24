@@ -37,7 +37,7 @@
   right: 415px;
   height: 1.5em;
   background: #ffffff;            /* 改为纯白背景 */
-  z-index: 1001;
+  /* z-index: 999; */
 
   /* 新增盒子模型计算方式 */
   box-sizing: border-box;         /* 确保边框包含在高度内 */

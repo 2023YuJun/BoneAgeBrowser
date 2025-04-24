@@ -29,7 +29,7 @@
     left: 0;
     top: 60px;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    z-index: 999;
+    /* z-index: 999; */
   }
   
   .placeholder {
