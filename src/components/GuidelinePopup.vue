@@ -223,8 +223,8 @@ const handleBoneClick = (boneName) => {
 /* 中间区域 */
 /* 调整中间区域布局 */
 .middle-section {
-  height: 100px;
-  padding: 10px;
+  height: 140px;
+  padding: 15px;
   border-bottom: 1px solid #eee;
   display: flex;
   justify-content: center; /* 内容居中 */

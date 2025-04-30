@@ -80,7 +80,7 @@ const handleButtonClick = (buttonName) => {
   align-items: center;
   padding: 0 20px;
   height: 60px;
-  background: #9fb2c4;
+  background: #becede;
   color: white;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   position: fixed;

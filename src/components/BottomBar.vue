@@ -21,6 +21,9 @@
   
   
   const isAnnotationEnabled = ref(false)
+
+
+  
 </script>
   
 <style scoped>
@@ -34,7 +37,7 @@
   position: fixed;
   bottom: 0;
   left: 235px;
-  right: 415px;
+  right: 405px;
   height: 1.5em;
   background: #ffffff;            /* 改为纯白背景 */
   /* z-index: 999; */

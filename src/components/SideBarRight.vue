@@ -56,8 +56,8 @@
           <!-- 性别 -->
           <div class="input-item gender-item">
             <span class="input-label">性别：</span>
-            <select class="gender-select">
-              <option value="">/</option>
+            <select class="gender-select" v-model="selectedGender">
+              <option value=""></option> <!-- 默认空值 -->
               <option value="male">男</option>
               <option value="female">女</option>
             </select>
@@ -101,11 +101,13 @@
           <!-- 标题行 -->
           <div class="bone-list-header">
             <span class="bone-list-title">骨龄列表</span>
-            <button class="refresh-btn" @click="refreshScores">
-              <svg class="refresh-icon" viewBox="0 0 24 24">
-                <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
-              </svg>
-            </button>
+            <div class="action-buttons"> <!-- 改为与影像模块相同的按钮容器 -->
+              <button class="action-btn" @click="refreshScores" title="刷新分数">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
+                </svg>
+              </button>
+            </div>
           </div>
           <!-- 滚动容器 -->
           <div class="scroll-container">
@@ -268,24 +270,22 @@ watch([viewContent, impressionContent], ([newView, newImpression]) => {
   saveToStorage('medicalImageImpression', newImpression)
 })
 
-// 新增操作逻辑
+// 复制操作逻辑
 const copyText = async () => {
   try {
     const text = activeImageTab.value === 'view' 
       ? viewContent.value 
       : impressionContent.value
     await navigator.clipboard.writeText(text)
-    alert('复制成功！')
+    // 移除alert提示
   } catch (err) {
-    alert('复制失败，请手动选择文本复制')
+    // 静默失败，不显示提示
   }
 }
 
 // ========== 删除功能优化 ==========
 const clearText = () => {
-  // 确认对话框
-  if (!confirm("确定要永久删除当前内容吗？")) return
-  
+  // 移除确认对话框
   if (activeImageTab.value === 'view') {
     viewContent.value = ''
   } else {
@@ -293,6 +293,9 @@ const clearText = () => {
   }
 }
 
+
+// 新增性别响应式数据
+const selectedGender = ref('') // 初始为空值
 
 
 </script>
@@ -302,15 +305,16 @@ const clearText = () => {
 <style scoped>
 /* 侧边栏容器 */
 .sidebar-right {
-  width: 380px;
+  width: var(--sidebar-width);
   height: calc(100vh - 60px);
   background: #f5f6fa;
   position: fixed;
   right: 0;
   top: 60px;
-  padding: 15px;
+  padding: 1rem;
   border-left: 1px solid #dcdde1;
   display: block !important; /* 强制显示 */
+  overflow-y: auto;
 }
 
 /* 1. 骨龄列表容器 */
@@ -320,7 +324,8 @@ const clearText = () => {
   padding: 0; /* 内部间距由子元素控制 */
   background: white;
   margin-top: 15px;
-  height: 420px;     /* 固定高度 */
+  height: 40vh;
+  min-height: 300px;
   display: flex;                /* 新增 */
   flex-direction: column;       /* 新增 */
 }
@@ -394,7 +399,7 @@ const clearText = () => {
 .mode-button {
   flex: 1;
   min-width: 110px;
-  padding: 8px 12px;
+  padding: 8px 2px;
   border: 1px solid #3498db;
   border-radius: 4px;
   background: #f8f9fa;
@@ -474,7 +479,7 @@ const clearText = () => {
   padding-right: 12px;
 }
 
-.gender-item::after {
+/* .gender-item::after {
   content: "▼";
   position: absolute;
   right: 0;
@@ -483,7 +488,7 @@ const clearText = () => {
   font-size: 0.7em;
   color: #7f8c8d;
   pointer-events: none;
-}
+} */
 
 /* 聚焦状态优化 */
 .age-input:focus,
@@ -506,9 +511,9 @@ const clearText = () => {
 
 /* 调整新增行间距 */
 .compact-input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 20px; /* 控制两行之间的垂直间距 */
+  display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(60px, auto));
+  gap: 1rem;
 }
 
 /* 禁用状态样式 */

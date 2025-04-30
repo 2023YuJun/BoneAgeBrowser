@@ -78,7 +78,8 @@
   }
   
   .popup-container {
-    width: 850px;
+    width: min(90vw, 600px);
+    max-height: 90vh;
     background: white;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
@@ -151,7 +152,8 @@
     padding: 8px 12px;
     border: 1px solid #dcdde1;
     border-radius: 4px;
-    width: 200px;
+    width: 100%;
+    max-width: 300px;
   }
   
   .report-input:focus {
