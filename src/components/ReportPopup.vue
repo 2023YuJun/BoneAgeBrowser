@@ -26,7 +26,7 @@
               <input type="number" class="report-input" placeholder="请输入"> cm
             </div>
             <div class="input-item">
-              <label>目前身高：</label>
+              <label>母亲身高：</label>
               <input type="number" class="report-input" placeholder="请输入"> cm
             </div>
             <div class="input-item">
