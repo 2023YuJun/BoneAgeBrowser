@@ -507,9 +507,65 @@ const boneData = {
     '第三、第五中节指骨': [
       {
         level: '1',
-        image: 'RUS-CHN-radius-1.jpg',
-        description: '骨化中心仅可见一个钙化点，极少为多个，边缘不清晰',
+        image: 'RUS-CHN-MIP-1.jpg',
+        description: '骨化中心仅可见一个钙化点,极少为多个边缘不清晰',
       },
+      {
+        level: '2',
+        image: 'RUS-CHN-MIP-2.jpg',
+        description: '骨化中心清晰可见,为圆盘形,有平滑连续的缘',
+      },
+      {
+        level: '3',
+        image: 'RUS-CHN-MIP-3.jpg',
+        description: '骺最大直径为骨干宽的一半或一半以上',
+      },
+      {
+        level: '4(0)',
+        image: 'RUS-CHN-MIP-4(0).jpg',
+        description: '骺近侧缘的中间部分变厚,朝向相邻指骨的末端生长,并按其滑车关节面成形(致密线为骺的背侧面:在它的一侧或两侧,掌侧面向近侧凸出,或掌侧面和背侧面的近侧缘重叠)',
+      },
+      {
+        level: '4(2)',
+        image: 'RUS-CHN-MIP-4(2).jpg',
+        description: '骺在外侧与骨干等宽',
+      },
+      {
+        level: '5(0)',
+        image: 'RUS-CHN-MIP-5(0).jpg',
+        description: '骺在两侧与骨干等宽',
+      },
+      {
+        level: '5(2)',
+        image: 'RUS-CHN-MIP-5(2).jpg',
+        description: '骺外侧端呈方形',
+      },
+      {
+        level: '6(0)',
+        image: 'RUS-CHN-MIP-6(0).jpg',
+        description: '骺在一侧覆盖骨干(通常在外侧)',
+      },
+      {
+        level: '6(2)',
+        image: 'RUS-CHN-MIP-6(2).jpg',
+        description: '骺在两侧覆盖骨干',
+      },
+      {
+        level: '7(0)',
+        image: 'RUS-CHN-MIP-7(0).jpg',
+        description: '骺和骨干开始融合',
+      },
+      {
+        level: '7(2)',
+        image: 'RUS-CHN-MIP-7(2).jpg',
+        description: '骺与骨干融合过半',
+      },
+      {
+        level: '8',
+        image: 'RUS-CHN-MIP-8.jpg',
+        description: '骺和骨干完全融合',
+      },
+
 
        // 添加更多等级数据...
     ],
@@ -518,7 +574,57 @@ const boneData = {
       {
         level: '1',
         image: 'RUS-CHN-radius-1.jpg',
-        description: '骨化中心仅可见一个钙化点，极少为多个，边缘不清晰',
+        description: '骨化中心仅可见一个钙化点,极少为多个边缘不清晰',
+      },
+      {
+        level: '2',
+        image: 'RUS-CHN-radius-2.jpg',
+        description: '骨化中心清晰可见,为圆盘形,有平滑连续的缘',
+      },
+      {
+        level: '3',
+        image: 'RUS-CHN-radius-3.jpg',
+        description: '骺最大直径为骨干宽的一半或一半以上',
+      },
+      {
+        level: '4',
+        image: 'RUS-CHN-radius-4.jpg',
+        description: '（1）骺与骨干等宽。（2）骺远侧缘变平,近侧缘成角(类似于中节、远节指骨骺在该等级上沿中心轴向下生长而出现的近侧缘形状变化。由于拇指的转动,这种变化通常发生在近侧缘的内侧)。',
+      },
+      {
+        level: '5(0)',
+        image: 'RUS-CHN-radius-5(0).jpg',
+        description: '（1）骺的近-外侧缘凹,按近节指骨头的形状成形(由于拇指内旋程度不同,关节面也可表现为近-外侧缘内的致密凹陷)。（2）在骺远侧缘上可见内、外侧面,远节指骨底与内、外侧面之间的鞍形相一致。（3）骺宽于骨干。',
+      },
+      {
+        level: '5(2)',
+        image: 'RUS-CHN-radius-5(2).jpg',
+        description: '骺外侧端呈方形',
+      },
+      {
+        level: '6(0)',
+        image: 'RUS-CHN-radius-6(0).jpg',
+        description: '骺在一侧覆盖骨干(由于拇指的内旋内侧端更清晰)',
+      },
+      {
+        level: '6(2)',
+        image: 'RUS-CHN-radius-6(2).jpg',
+        description: '骺在两侧覆盖骨干',
+      },
+      {
+        level: '7(0)',
+        image: 'RUS-CHN-radius-7(0).jpg',
+        description: '骺和骨干开始融合',
+      },
+      {
+        level: '7(2)',
+        image: 'RUS-CHN-radius-7(2).jpg',
+        description: '骺与骨干融合过半',
+      },
+      {
+        level: '8',
+        image: 'RUS-CHN-radius-8.jpg',
+        description: '骺和骨干完全融合',
       },
 
        // 添加更多等级数据...
@@ -527,9 +633,60 @@ const boneData = {
     '第三、第五远节指骨': [
       {
         level: '1',
-        image: 'RUS-CHN-radius-1.jpg',
-        description: '骨化中心仅可见一个钙化点，极少为多个，边缘不清晰',
+        image: 'RUS-CHN-DIP-1.jpg',
+        description: '骨化中心仅可见一个钙化点,极少为多个边缘不清晰',
       },
+      {
+        level: '2',
+        image: 'RUS-CHN-DIP-2.jpg',
+        description: '骨化中心清晰可见,为圆盘形,有平滑连续的缘',
+      },
+      {
+        level: '3',
+        image: 'RUS-CHN-DIP-3.jpg',
+        description: '骺最大直径为骨干宽的一半或一半以上',
+      },
+      {
+        level: '4',
+        image: 'RUS-CHN-DIP-4.jpg',
+        description: '（1）骺与骨干等宽。（2）骺近侧缘向中节指骨末端生长,但尚不能区分出掌侧面和背侧面。',
+      },
+      {
+        level: '5(0)',
+        image: 'RUS-CHN-DIP-5(0).jpg',
+        description: '骺近侧缘可区分为掌侧面和背侧面,并都按中节指骨的滑车关节面成形。背侧面致密白线近侧的凸出部分为掌侧面',
+      },
+      {
+        level: '5(2)',
+        image: 'RUS-CHN-DIP-5(2).jpg',
+        description: '骺外侧呈方形',
+      },
+      {
+        level: '6(0)',
+        image: 'RUS-CHN-DIP-6(0).jpg',
+        description: '骺在一侧覆盖骨干',
+      },
+      {
+        level: '6(2)',
+        image: 'RUS-CHN-DIP-6(2).jpg',
+        description: ':骺在两侧覆干骨干',
+      },
+      {
+        level: '7(0)',
+        image: 'RUS-CHN-DIP-7(0).jpg',
+        description: '骺与骨干开始融合',
+      },
+      {
+        level: '7(2)',
+        image: 'RUS-CHN-DIP-7(2).jpg',
+        description: '骺与骨干融合过半',
+      },
+      {
+        level: '8',
+        image: 'RUS-CHN-DIP-8.jpg',
+        description: '骺和骨干完全融合',
+      },
+
 
        // 添加更多等级数据...
     ],
@@ -820,7 +977,151 @@ const boneData = {
         description: '骺和骨干完全融合',
       },
     ],
+
+    '第三、第五中节指骨': [
+      {
+        level: '1',
+        image: 'RUS-CHN-MIP-1.jpg',
+        description: '骨化中心仅可见一个钙化点,极少为多个边缘不清晰',
+      },
+      {
+        level: '2',
+        image: 'RUS-CHN-MIP-2.jpg',
+        description: '骨化中心清晰可见,为圆盘形,有平滑连续的缘',
+      },
+      {
+        level: '3',
+        image: 'RUS-CHN-MIP-3.jpg',
+        description: '骺最大直径为骨干宽的一半或一半以上',
+      },
+      {
+        level: '4',
+        image: 'RUS-CHN-MIP-4(0).jpg',
+        description: '骺近侧缘的中间部分变厚,朝向相邻指骨的末端生长,并按其滑车关节面成形(致密线为骺的背侧面:在它的一侧或两侧,掌侧面向近侧凸出,或掌侧面和背侧面的近侧缘重叠)',
+      },
+     
+      {
+        level: '5',
+        image: 'RUS-CHN-MIP-5(0).jpg',
+        description: '骺在两侧与骨干等宽',
+      },
+      
+      {
+        level: '6',
+        image: 'RUS-CHN-MIP-6(0).jpg',
+        description: '骺在一侧覆盖骨干(通常在外侧)',
+      },
+      
+      {
+        level: '7',
+        image: 'RUS-CHN-MIP-7(0).jpg',
+        description: '骺和骨干开始融合',
+      },
+      
+      {
+        level: '8',
+        image: 'RUS-CHN-MIP-8.jpg',
+        description: '骺和骨干完全融合',
+      },
+    ],
+
+    '第一远节指骨': [
+      {
+        level: '1',
+        image: 'RUS-CHN-radius-1.jpg',
+        description: '骨化中心仅可见一个钙化点,极少为多个边缘不清晰',
+      },
+      {
+        level: '2',
+        image: 'RUS-CHN-radius-2.jpg',
+        description: '骨化中心清晰可见,为圆盘形,有平滑连续的缘',
+      },
+      {
+        level: '3',
+        image: 'RUS-CHN-radius-3.jpg',
+        description: '骺最大直径为骨干宽的一半或一半以上',
+      },
+      {
+        level: '4',
+        image: 'RUS-CHN-radius-4.jpg',
+        description: '（1）骺与骨干等宽。（2）骺远侧缘变平,近侧缘成角(类似于中节、远节指骨骺在该等级上沿中心轴向下生长而出现的近侧缘形状变化。由于拇指的转动,这种变化通常发生在近侧缘的内侧)。',
+      },
+      {
+        level: '5',
+        image: 'RUS-CHN-radius-5(0).jpg',
+        description: '（1）骺的近-外侧缘凹,按近节指骨头的形状成形(由于拇指内旋程度不同,关节面也可表现为近-外侧缘内的致密凹陷)。（2）在骺远侧缘上可见内、外侧面,远节指骨底与内、外侧面之间的鞍形相一致。（3）骺宽于骨干。',
+      },
+      
+      {
+        level: '6',
+        image: 'RUS-CHN-radius-6(0).jpg',
+        description: '骺在一侧覆盖骨干(由于拇指的内旋内侧端更清晰)',
+      },
+      
+      {
+        level: '7',
+        image: 'RUS-CHN-radius-7(0).jpg',
+        description: '骺和骨干开始融合',
+      },
     
+      {
+        level: '8',
+        image: 'RUS-CHN-radius-8.jpg',
+        description: '骺和骨干完全融合',
+      },
+
+       // 添加更多等级数据...
+    ],
+
+    '第三、第五远节指骨': [
+      {
+        level: '1',
+        image: 'RUS-CHN-DIP-1.jpg',
+        description: '骨化中心仅可见一个钙化点,极少为多个边缘不清晰',
+      },
+      {
+        level: '2',
+        image: 'RUS-CHN-DIP-2.jpg',
+        description: '骨化中心清晰可见,为圆盘形,有平滑连续的缘',
+      },
+      {
+        level: '3',
+        image: 'RUS-CHN-DIP-3.jpg',
+        description: '骺最大直径为骨干宽的一半或一半以上',
+      },
+      {
+        level: '4',
+        image: 'RUS-CHN-DIP-4.jpg',
+        description: '（1）骺与骨干等宽。（2）骺近侧缘向中节指骨末端生长,但尚不能区分出掌侧面和背侧面。',
+      },
+      {
+        level: '5',
+        image: 'RUS-CHN-DIP-5(0).jpg',
+        description: '骺近侧缘可区分为掌侧面和背侧面,并都按中节指骨的滑车关节面成形。背侧面致密白线近侧的凸出部分为掌侧面',
+      },
+      
+      {
+        level: '6',
+        image: 'RUS-CHN-DIP-6(0).jpg',
+        description: '骺在一侧覆盖骨干',
+      },
+      
+      {
+        level: '7',
+        image: 'RUS-CHN-DIP-7(0).jpg',
+        description: '骺与骨干开始融合',
+      },
+      
+      {
+        level: '8',
+        image: 'RUS-CHN-DIP-8.jpg',
+        description: '骺和骨干完全融合',
+      },
+
+
+       // 添加更多等级数据...
+    ],
+
   },
   
   // 添加其他模式数据...
