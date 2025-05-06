@@ -1123,6 +1123,307 @@ const boneData = {
     ],
 
   },
+
+  'TW3-C-CARPAL': {
+    '头状骨': [
+      {
+        level: '1',
+        image: 'TW3-C-CARPAL-capitate-1.jpg',
+        description: '骨化中心仅可见一个钙化点,极少为多个,边缘不清晰',
+      },
+      {
+        level: '2',
+        image: 'TW3-C-CARPAL-capitate-2.jpg',
+        description: '骨化中心清晰可见,为椭圆形,有平滑连续的缘',
+      },
+      {
+        level: '3',
+        image: 'TW3-C-CARPAL-capitate-3.jpg',
+        description: '（1）骨化中心最大直径为桡骨宽的一半或一半以上。（2）骨化中心与钩骨相邻缘变平,或仅稍凹。（3）骨化中心与第二掌骨相邻缘也开始与钩骨缘不同,因而骨化中心近似D形',
+      },
+      {
+        level: '4',
+        image: 'TW3-C-CARPAL-capitate-4.jpg',
+        description: '（1）骨化中心钩骨缘凹,稍致密。（2）骨化中心增长,纵向直径明显大于横向直径,但小于近侧缘到桡骨骨干之间的距离。',
+      },
+      {
+        level: '5',
+        image: 'TW3-C-CARPAL-capitate-5.jpg',
+        description: '骨化中心纵向直径等于或大于近侧缘到桡骨干的距离',
+      },
+      {
+        level: '6',
+        image: 'TW3-C-CARPAL-capitate-6.jpg',
+        description: '（1）骨化中心远侧的外侧缘(第二和第三掌骨关节面)致密。（2）骨化中心在钩骨缘(钩骨关节面)凹的中部出现致密白线。',
+      },
+      {
+        level: '7',
+        image: 'TW3-C-CARPAL-capitate-7.jpg',
+        description: '骨化中心第二和第三掌骨关节面可区分为掌侧面和背侧面:上一等级中远侧的外侧缘致密白线已经到了边缘的内部',
+      },
+     
+      // 添加更多等级数据...
+    ],
+    '钩骨': [
+      {
+        level: '1',
+        image: 'TW3-C-CARPAL-hamate-1.jpg',
+        description: '骨化中心仅可见一个钙化点,极少为多个,边缘不清晰',
+      },
+      {
+        level: '2',
+        image: 'TW3-C-CARPAL-hamate-2.jpg',
+        description: '骨化中心清晰可见,为圆形,有平滑连续的缘',
+      },
+      {
+        level: '3',
+        image: 'TW3-C-CARPAL-hamate-3.jpg',
+        description: '（1）骨化中心最大直径为桡骨骨干宽的一半或一半以上。（2）骨化中心三角骨关节面变平,形状为D形,直线端与手的长轴成斜线方向，',
+      },
+      {
+        level: '4',
+        image: 'TW3-C-CARPAL-hamate-4.jpg',
+        description: '（1）骨化中心头状骨缘按头状骨的钩骨关节面成形(通常的形式为,在该缘的一半处或向下 2/3 处微凸,在凸的远侧和近侧的缘变平)。（2）骨化中心可区分出掌骨缘和头状骨缘,形状由D形变为三角形。',
+      },
+      {
+        level: '5',
+        image: 'TW3-C-CARPAL-hamate-5.jpg',
+        description: '骨化中心三角骨缘凹(由于从上一等级开始明显朝向第五掌骨底生长)',
+      },
+      {
+        level: '6',
+        image: 'TW3-C-CARPAL-hamate-6.jpg',
+        description: '骨化中心第四掌骨关节面可区分为掌侧面和背侧面,沿骨的远侧缘或在远侧缘以内可见致密白线',
+      },
+      {
+        level: '7',
+        image: 'TW3-C-CARPAL-hamate-7.jpg',
+        description: '（1）骨化中心开始出现钩的致密轮廓线。（2）骨化中心可区分出第四和第五掌骨关节面:横向的为第四掌骨关节面,与手纵轴成斜线方向的为第五掌骨关节面。',
+      },
+      {
+        level: '8',
+        image: 'TW3-C-CARPAL-hamate-8.jpg',
+        description: '骨化中心钩骨的钩已完全可见',
+      },
+      
+     
+      // 添加更多等级数据...
+    ],
+    '三角骨': [
+      {
+        level: '1',
+        image: 'TW3-C-CARPAL-triquetral-1.jpg',
+        description: '骨化中心仅可见一个钙化点,极少为多个,边缘不清晰',
+      },
+      {
+        level: '2',
+        image: 'TW3-C-CARPAL-triquetral-2.jpg',
+        description: '骨化中心清晰可见,为圆形,有平滑连续的缘',
+      },
+      {
+        level: '3',
+        image: 'TW3-C-CARPAL-triquetral-3.jpg',
+        description: '（1）骨化中心最大直径为尺骨骨干宽的一半或一半以上。（2）骨化中心与钩骨相邻的缘变平。',
+      },
+      {
+        level: '4',
+        image: 'TW3-C-CARPAL-triquetral-4.jpg',
+        description: '骨化中心增长,纵向直径明显大于横向直径(从上一等级开始,在内-远侧缘生长最快)',
+      },
+      {
+        level: '5',
+        image: 'TW3-C-CARPAL-triquetral-5.jpg',
+        description: '骨化中心月骨缘变平,与钩骨缘形成稍大于90°的角,一条缘或两条缘致密',
+      },
+      {
+        level: '6',
+        image: 'TW3-C-CARPAL-triquetral-6.jpg',
+        description: '骨化中心钩骨缘或月骨缘可见掌侧面和背侧面,上一等级所见的缘上致密白线已经到了缘内',
+      },
+      {
+        level: '7',
+        image: 'TW3-C-CARPAL-triquetral-7.jpg',
+        description: '骨化中心的远侧部分增宽,内侧缘凹',
+      },
+      
+     
+      // 添加更多等级数据...
+    ],
+    '月骨': [
+      {
+        level: '1',
+        image: 'TW3-C-CARPAL-lunate-1.jpg',
+        description: '骨化中心仅可见一个钙化点,极少为多个,边缘不清晰',
+      },
+      {
+        level: '2',
+        image: 'TW3-C-CARPAL-lunate-2.jpg',
+        description: '骨化中心清晰可见,为椭圆形,有平滑连续的缘',
+      },
+      {
+        level: '3',
+        image: 'TW3-C-CARPAL-lunate-3.jpg',
+        description: '（1）骨化中心最大直径为尺骨骨干宽的一半或一半以上。（2）骨化中心的远侧缘致密。',
+      },
+      {
+        level: '4',
+        image: 'TW3-C-CARPAL-lunate-4.jpg',
+        description: '（1）骨化中心远侧部分可见掌侧面或背侧面,其中一个面或两个面由二者汇合处的致密线向远侧凸出:背侧面可能朝向舟骨凸出,但未形成下一等级的马鞍形。（2）骨化中心与桡骨相邻的缘变平。',
+      },
+      {
+        level: '5',
+        image: 'TW3-C-CARPAL-lunate-5.jpg',
+        description: '（1）骨化中心远侧关节面形成与头状骨相关节的马鞍形,背侧部分超过了鞍的掌侧部分(致密的)的外侧缘,但是不足掌侧缘到舟骨距离的一半。（2）骨化中心舟骨和三角骨缘变平、稍致密。',
+      },
+      {
+        level: '6',
+        image: 'TW3-C-CARPAL-lunate-6.jpg',
+        description: '（1）骨化中心头状骨鞍的背侧面进一步增大,超过了鞍的掌侧缘到舟骨距离的一半。（2）骨化中心舟骨缘(仍为直线)和骨缘成角。',
+      },
+      {
+        level: '7',
+        image: 'TW3-C-CARPAL-lunate-7.jpg',
+        description: '（1）骨化中心头状骨鞍的背侧面向外侧延伸,与舟骨缘接触或重叠(根据个体形状和位置不同,掌侧面或背侧面或二者也与头状骨接触或重叠)。（2）骨化中心舟骨缘凹。',
+      },
+
+      
+     
+      // 添加更多等级数据...
+    ],
+    '舟骨': [
+      {
+        level: '1',
+        image: 'TW3-C-CARPAL-scaphoid-1.jpg',
+        description: '骨化中心仅可见一个钙化点,极少为多个,边缘不清晰',
+      },
+      {
+        level: '2',
+        image: 'TW3-C-CARPAL-scaphoid-2.jpg',
+        description: '骨化中心清晰可见,为圆形,有平滑连续的缘',
+      },
+      {
+        level: '3',
+        image: 'TW3-C-CARPAL-scaphoid-3.jpg',
+        description: '骨化中心最大直径为尺骨骨干宽的一半或一半以上',
+      },
+      {
+        level: '4',
+        image: 'TW3-C-CARPAL-scaphoid-4.jpg',
+        description: '骨化中心掌侧面的致密白线外部,可见头状骨关节面的背侧面',
+      },
+      {
+        level: '5',
+        image: 'TW3-C-CARPAL-scaphoid-5.jpg',
+        description: '（1）骨化中心头状骨关节面的掌侧面和背侧面凹。（2）骨化中心大多角骨和小多角骨缘变平',
+      },
+      {
+        level: '6',
+        image: 'TW3-C-CARPAL-scaphoid-6.jpg',
+        description: '（1）骨化中心头状骨关节面的背侧面超过致密白线,朝向月骨和头状骨的近侧部分。（2）骨化中心月骨缘的头状骨端比桡骨骺端更接近中轴线,仅这条缘的头状骨端与月骨相接触。',
+      },
+      {
+        level: '7',
+        image: 'TW3-C-CARPAL-scaphoid-7.jpg',
+        description: '（1）骨化中心头状骨关节面与头状骨密切一致。（2）骨化中心月骨缘改变了方向,它的桡骨骺端和头状骨端同样接近手的中轴线:该缘远侧的大部分与月骨相接触。（3）骨化中心的远侧部分向外侧增长,桡骨茎突关节面出现,使外侧缘远侧部分凹或出现明显的远侧头。',
+      },
+      
+      
+     
+      // 添加更多等级数据...
+    ],
+    '大多角骨': [
+      {
+        level: '1',
+        image: 'TW3-C-CARPAL-trapezium-1.jpg',
+        description: '骨化中心仅可见一个钙化点,极少为多个,边缘不清晰',
+      },
+      {
+        level: '2',
+        image: 'TW3-C-CARPAL-trapezium-2.jpg',
+        description: '骨化中心清晰可见,为圆形,有平滑连续的缘',
+      },
+      {
+        level: '3',
+        image: 'TW3-C-CARPAL-trapezium-3.jpg',
+        description: '（1）骨化中心最大直径为第一掌骨骨干宽的一半或一半以上。（2）骨化中心第一掌骨缘和(或)舟骨缘变平:两缘之间的距离小于与其成直角的直径',
+      },
+      {
+        level: '4',
+        image: 'TW3-C-CARPAL-trapezium-4.jpg',
+        description: '第二掌骨与大多角骨之间的距离小于大多角骨最大直径的1/3。',
+      },
+      {
+        level: '5',
+        image: 'TW3-C-CARPAL-trapezium-5.jpg',
+        description: '骨化中心第一掌骨缘明显凹,在中心部分稍致密',
+      },
+      {
+        level: '6',
+        image: 'TW3-C-CARPAL-trapezium-6.jpg',
+        description: '（1）骨化中心远侧缘与第二掌骨底的外侧尖顶稍重叠。（2）骨化中心舟骨缘变平、致密。该缘的掌侧面和背侧面由与小多角骨重叠之外的部分所组成。',
+      },
+      {
+        level: '7',
+        image: 'TW3-C-CARPAL-trapezium-7.jpg',
+        description: '（1）骨化中心桡侧端的远侧部分出现直线缘,在与第一掌骨关节面的相接处形成尖角。（2）骨化中心第一掌骨关节面可区分为掌侧面和背侧面,与第一掌骨骺的马鞍形相致',
+      },
+      {
+        level: '8',
+        image: 'TW3-C-CARPAL-trapezium-8.jpg',
+        description: '骨化中心桡侧缘向外凸出面将该缘分为两部分,远侧部分朝向外侧,近侧部分朝向桡骨茎突:近侧部分稍凹,或变平',
+      },
+
+      
+      
+     
+      // 添加更多等级数据...
+    ],
+    '小多角骨': [
+      {
+        level: '1',
+        image: 'TW3-C-CARPAL-trapezoid-1.jpg',
+        description: '骨化中心仅可见一个钙化点,极少为多个,边缘不清晰。',
+      },
+      {
+        level: '2',
+        image: 'TW3-C-CARPAL-trapezoid-2.jpg',
+        description: '骨化中心清晰可见,为圆形,有平滑连续的缘。',
+      },
+      {
+        level: '3',
+        image: 'TW3-C-CARPAL-trapezoid-3.jpg',
+        description: '骨化中心最大直径为第一掌骨骨干宽的一半或一半以上。',
+      },
+      {
+        level: '4',
+        image: 'TW3-C-CARPAL-trapezoid-4.jpg',
+        description: '骨化中心头状骨缘和(或)第二掌骨底内侧缘变平。',
+      },
+      {
+        level: '5',
+        image: 'TW3-C-CARPAL-trapezoid-5.jpg',
+        description: '（1）沿骨化中心头状骨缘和(或)第二掌骨底内侧缘出现致密白线;其中一个缘可区分为掌侧面和背侧面。（2）骨化中心远侧缘形成了与第二掌骨底凹陷部相关节的圆顶;但尚不能区分出掌侧面和背侧面。',
+      },
+      {
+        level: '6',
+        image: 'TW3-C-CARPAL-trapezoid-6.jpg',
+        description: '在骨化中心第二掌骨关节面掌侧面的致密线远侧,可见背侧面:头状骨关节面的背侧面亦可见(这些背侧面分别与第二掌骨缘和头状骨缘接近,或相互重叠)。',
+      },
+      {
+        level: '7',
+        image: 'TW3-C-CARPAL-trapezoid-7.jpg',
+        description: '骨化中心近侧缘的背侧面凹,致密的掌侧面仍然为直线。',
+      },
+      
+      
+     
+      // 添加更多等级数据...
+    ],
+
+
+
+
+  },
   
   // 添加其他模式数据...
 }
