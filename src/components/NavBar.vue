@@ -6,7 +6,7 @@
                     <img src="/logo.png" />
                 </div>
             </div>
-            <a class="btn btn-ghost text-xl">骨龄评估系统</a>
+            <a class="mx-4 text-xl">骨龄评估系统</a>
         </div>
         <div class="navbar-center lg:flex">
             <ul class="menu menu-horizontal px-1">
@@ -47,12 +47,11 @@ export default {
         return {};
     },
     data() {
-        return {
-        };
+        return {};
     },
-    created() { },
-    mounted() { },
-    updated() { },
+    created() {},
+    mounted() {},
+    updated() {},
     methods: {}
 };
 </script>
