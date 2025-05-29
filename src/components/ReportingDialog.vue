@@ -2,12 +2,15 @@
     <dialog id="reporting_dialog" class="modal">
         <div class="modal-box">
             <form method="dialog">
-                <div class="avatar">
-                    <div class="w-10 rounded">
-                        <img src="/logo.png" />
+                <div class="flex flex-row justify-start items-center mx-4">
+                    <div class="avatar">
+                        <div class="w-10 rounded">
+                            <img src="/logo.png" />
+                        </div>
                     </div>
+                    <a class="mx-4 text-xl">骨龄评估系统</a>
+                    <p class="text-gray-500">输入基本信息生成报告</p>
                 </div>
-                <a class="mx-4 text-xl">骨龄评估系统</a>
                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
             </form>
             <div class="my-10 mx-16 space-y-4">
