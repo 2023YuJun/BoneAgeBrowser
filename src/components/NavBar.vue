@@ -32,17 +32,22 @@
             <ul class="menu menu-horizontal px-1">
                 <li><a>收藏病例</a></li>
                 <li><a>中华05指南</a></li>
-                <li><a>操作指南</a></li>
+                <li><a @click="$refs.operationGuide.showModal()">操作指南</a></li>
                 <li><a>返回列表</a></li>
             </ul>
         </div>
     </div>
+    <OperationGuide ref="operationGuide" />
 </template>
 
 <script>
+import OperationGuide from '@/components/OperationGuide.vue';
+
 export default {
     name: 'NavBar',
-    components: {},
+    components: {
+        OperationGuide
+    },
     setup() {
         return {};
     },
