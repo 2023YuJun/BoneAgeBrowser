@@ -31,22 +31,25 @@
         <div class="navbar-end">
             <ul class="menu menu-horizontal px-1">
                 <li><a>收藏病例</a></li>
-                <li><a>中华05指南</a></li>
+                <li><a @click="$refs.boneAgeGuide.showModal()">中华05指南</a></li>
                 <li><a @click="$refs.operationGuide.showModal()">操作指南</a></li>
                 <li><a>返回列表</a></li>
             </ul>
         </div>
     </div>
+    <BoneAgeGuide ref="boneAgeGuide" />
     <OperationGuide ref="operationGuide" />
 </template>
 
 <script>
+import BoneAgeGuide from '@/components/BoneAgeGuide.vue';
 import OperationGuide from '@/components/OperationGuide.vue';
 
 export default {
     name: 'NavBar',
     components: {
-        OperationGuide
+        OperationGuide,
+        BoneAgeGuide
     },
     setup() {
         return {};
