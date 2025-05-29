@@ -1,25 +1,17 @@
 <template>
     <div class="w-full h-full">
-        <!-- <button @click="loadDicomImage" class="px-4 py-2 bg-blue-500 text-white rounded">Load DICOM Image</button> -->
         <div id="content" class="w-full h-full flex justify-center items-center"></div>
     </div>
 </template>
 
 <script>
-import { 
-    RenderingEngine,
-    Enums,
-    volumeLoader,
-    cornerstoneStreamingImageVolumeLoader
-} from '@cornerstonejs/core';
+import { RenderingEngine, Enums, volumeLoader, cornerstoneStreamingImageVolumeLoader } from '@cornerstonejs/core';
 import { init as coreInit } from '@cornerstonejs/core';
 import { init as dicomImageLoaderInit } from '@cornerstonejs/dicom-image-loader';
 
-
 export default {
     name: 'DicomViewer',
-    components: {
-    },
+    components: {},
     setup() {
         coreInit();
         dicomImageLoaderInit();
@@ -28,43 +20,52 @@ export default {
     data() {
         return {};
     },
-    created() { },
-    mounted() { },
-    updated() { },
+    created() {},
+    mounted() {},
+    updated() {},
     methods: {
-        async loadDicomImage() {
-            // This method will be used to load DICOM images
-            // You can implement the logic to fetch and display DICOM images here
+        // 加载本地的 DICOM 图像
+        async loadLocalDicom(blob) {
+            await this.loadDicomImage(blob);
+        },
+        // 加载 Web 的 DICOM 图像
+        async loadWebDicom(url) {
+            await this.loadDicomImage(url);
+        },
+        // DICOM 图像加载过程
+        async loadDicomImage(wadouri) {
+            // 捕获用于显示 DICOM 图像的 DOM
             const content = document.getElementById('content');
 
-            // 先删除旧的内容
+            // 先清除旧的内容
             content.innerHTML = '';
-            // 创建一个新的元素来显示 DICOM 图像
+
+            // 在 DOM 内部创建一个新的元素来显示 DICOM 图像
             const element = document.createElement('div');
-
-            element.style.width = '500px';
-            element.style.height = '500px';
-
+            element.style.width = `${content.clientWidth}px`;
+            element.style.height = `${content.clientHeight}px`;
             content.appendChild(element);
 
+            // 创建一个渲染引擎
             const renderingEngineId = 'myRenderingEngine';
             const renderingEngine = new RenderingEngine(renderingEngineId);
 
+            // 注册体积加载器
             const viewportId = 'CT_AXIAL_STACK';
-
             const viewportInput = {
                 viewportId,
                 element,
-                type: Enums.ViewportType.STACK,
+                type: Enums.ViewportType.STACK
             };
-
             renderingEngine.enableElement(viewportInput);
 
+            // 使用渲染引擎处理视图的创建
             const viewport = renderingEngine.getViewport(viewportId);
 
+            // 根据 wadouri 地址将 DICOM 图像加载到画布中
+            viewport.setStack(['wadouri:' + wadouri]);
 
-            viewport.setStack(['wadouri:'+'http://localhost:8081/1.2.840.113619.2.203.4.604660980.1627231180.252286.dcm']);
-
+            // 渲染视图
             viewport.render();
         }
     }

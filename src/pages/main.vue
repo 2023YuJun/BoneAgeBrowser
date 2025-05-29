@@ -6,7 +6,7 @@
         <div class="flex-1 overflow-auto">
             <div class="flex h-full">
                 <div class="w-1/6 h-full">
-                    <SideBarLeft @load-dicom="handleLoadDicom" />
+                    <SideBarLeft @load-local-dicom="$refs.dicomViewer.loadLocalDicom($event)" @load-web-dicom="$refs.dicomViewer.loadWebDicom($event)" />
                 </div>
                 <div class="flex-1 h-full">
                     <DicomViewer ref="dicomViewer" />
@@ -46,11 +46,7 @@ export default {
     created() {},
     mounted() {},
     updated() {},
-    methods: {
-        handleLoadDicom() {
-            this.$refs.dicomViewer.loadDicomImage();
-        }
-    }
+    methods: {}
 };
 </script>
 
