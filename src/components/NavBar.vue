@@ -11,11 +11,11 @@
         <div class="navbar-center lg:flex">
             <ul class="menu menu-horizontal px-1">
                 <li><a>序列</a></li>
-                <li><a>移动</a></li>
-                <li><a>缩放</a></li>
-                <li><a>窗宽窗位</a></li>
-                <li><a>长度测量</a></li>
-                <li><a>恢复设置</a></li>
+                <li><a :class="{ 'menu-active': currentActiveToolGroup === 'pan' }" @click="switchToolGroup('pan')">移动</a></li>
+                <li><a :class="{ 'menu-active': currentActiveToolGroup === 'zoom' }" @click="switchToolGroup('zoom')">缩放</a></li>
+                <li><a :class="{ 'menu-active': currentActiveToolGroup === 'windowLevel' }" @click="switchToolGroup('windowLevel')">窗宽窗位</a></li>
+                <li><a :class="{ 'menu-active': currentActiveToolGroup === 'lengthTool' }" @click="switchToolGroup('lengthTool')">长度测量</a></li>
+                <li><a @click="resetSettings">恢复设置</a></li>
                 <li><a>恢复AI结果</a></li>
                 <li>
                     <details>
@@ -51,16 +51,31 @@ export default {
         OperationGuide,
         BoneAgeGuide
     },
+    emits: ['switch-tool-group', 'reset-settings'],
     setup() {
         return {};
     },
     data() {
-        return {};
+        return {
+            currentActiveToolGroup: null // 当前激活的工具组
+        };
     },
     created() {},
     mounted() {},
     updated() {},
-    methods: {}
+    methods: {
+        // 切换工具组
+        switchToolGroup(type) {
+            this.currentActiveToolGroup = type;
+            // 触发父组件事件，传递工具组类型
+            this.$emit('switch-tool-group', type);
+        },
+        // 恢复设置
+        resetSettings() {
+            this.currentActiveToolGroup = null;
+            this.$emit('reset-settings');
+        }
+    }
 };
 </script>
 

@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col h-screen">
         <div class="shrink-0">
-            <NavBar />
+            <NavBar @switch-tool-group="$refs.dicomViewer.switchToolGroup($event)" @reset-settings="$refs.dicomViewer.resetSettings($event)" />
         </div>
         <div class="flex-1 overflow-auto">
             <div class="flex h-full">
