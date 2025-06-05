@@ -26,7 +26,7 @@
                             <tr>
                                 <th>骨龄列表</th>
                                 <th>
-                                    <button class="btn btn-xs btn-outline btn-square">
+                                    <button class="btn btn-xs btn-outline btn-square" @click="loadBoneInfo(currentMode)">
                                         <font-awesome-icon :icon="['fas', 'rotate-right']" />
                                     </button>
                                 </th>
@@ -127,21 +127,24 @@ export default {
     mounted() {},
     updated() {},
     methods: {
+        // 初始化骨龄数据
+        initBoneData() {
+            this.currentBoneData = []; // 当前骨龄数据
+            this.actualAge = this.formatActualAge(this.$store.patient.birthDate); // 实际年龄
+            this.boneAge = '0岁0月'; // 骨龄年龄
+            this.sex = ((sex) => {
+                if (sex === 'M') return '男';
+                if (sex === 'F') return '女';
+                return '未知';
+            })(this.$store.patient.sex); // 性别
+            this.total = 0; // 计分
+        },
         // 加载骨龄信息
         async loadBoneInfo(mode) {
             this.currentMode = mode;
             // 根据选择的模式获取对应的骨龄数据
             this.currentBoneData = this.boneData[mode] || [];
             await this.getBoneData();
-            debugger;
-            // 获取实际年龄
-            this.actualAge = this.formatActualAge(this.$store.patient.birthDate);
-            // 获取性别(M男F女,其他未知)
-            this.sex = ((sex) => {
-                if (sex === 'M') return '男';
-                if (sex === 'F') return '女';
-                return '未知';
-            })(this.$store.patient.sex);
         },
         // 获取骨龄信息
         async getBoneData() {
@@ -155,9 +158,10 @@ export default {
             } else if (this.currentMode === 'TW3-C-RUS') {
                 result = await this.$api.view.getTW3CRUSInfo({ id: inferenceInfo.TCRResultID });
             }
-            debugger;
-            this.boneAge = this.formatBoneAge(result.BoneAge); // 获取骨龄年龄
-            this.total = result.Total || null; // 获取骨龄计分
+
+            this.boneAge = this.formatBoneAge(Number(result.BoneAge)); // 获取骨龄年龄
+            this.total = result.Total || 0; // 获取骨龄计分
+
             // 处理获取到的骨龄数据
             this.currentBoneData.forEach((bone) => {
                 if (result.hasOwnProperty(bone.name)) {
@@ -185,6 +189,9 @@ export default {
         },
         // 骨龄年龄格式转换
         formatBoneAge(age) {
+            if (isNaN(age) || age < 0) {
+                return '0岁0月';
+            }
             const years = Math.floor(age);
             const months = Math.round((age - years) * 12);
             if (months === 12) {

@@ -49,9 +49,13 @@ export default {
         },
         // 加载 Web 的 DICOM 图像
         loadWebDicom(patient) {
+            // 存入患者信息到 Pinia
             this.$store.patient.inferenceID = patient.inferenceID;
-            this.$store.patient.birthDate = patient.brithDate; // 后端变量命名有误
+            this.$store.patient.birthDate = patient.brithDate; // 后端变量命名有误，因此这里使用 brithDate
             this.$store.patient.sex = patient.sex;
+            // 初始化骨龄数据
+            this.$emit('init-bone-data');
+            // 加载 DICOM 图像
             // // 如果能访问到 PACS 则用这段代码
             // const dicomUrl = patient.downLoadUrl;
             // 如果不能访问 PACS 则用这段代码

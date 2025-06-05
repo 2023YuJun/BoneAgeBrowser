@@ -6,13 +6,13 @@
         <div class="flex-1 overflow-auto">
             <div class="flex h-full">
                 <div class="w-1/6 h-full">
-                    <SideBarLeft @load-local-dicom="$refs.dicomViewer.loadLocalDicom($event)" @load-web-dicom="$refs.dicomViewer.loadWebDicom($event)" />
+                    <SideBarLeft @init-bone-data="$refs.sideBarRight.initBoneData($event)" @load-local-dicom="$refs.dicomViewer.loadLocalDicom($event)" @load-web-dicom="$refs.dicomViewer.loadWebDicom($event)" />
                 </div>
                 <div class="flex-1 h-full">
                     <DicomViewer ref="dicomViewer" />
                 </div>
                 <div class="w-1/4 h-full">
-                    <SideBarRight />
+                    <SideBarRight ref="sideBarRight" />
                 </div>
             </div>
             <button class="btn bg-[#03C755] text-white rounded-full fixed bottom-4 right-4 z-50" @click="$refs.reportingDialog.showModal()">生长发育报告</button>
