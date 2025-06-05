@@ -21,8 +21,11 @@
                     <details>
                         <summary>更多</summary>
                         <ul class="p-2">
-                            <li><a>Submenu 1</a></li>
-                            <li><a>Submenu 2</a></li>
+                            <li><a>反色</a></li>
+                            <li><a>顺时针旋转</a></li>
+                            <li><a>逆时针旋转</a></li>
+                            <li><a>水平翻转</a></li>
+                            <li><a>垂直翻转</a></li>
                         </ul>
                     </details>
                 </li>
