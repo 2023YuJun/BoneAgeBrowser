@@ -43,7 +43,12 @@ export default {
     data() {
         return {};
     },
-    created() {},
+    created() {
+        // 获取URL中的patientID参数并存储到Pinia中
+        const patientID = this.$route.query.patientID;
+        this.$store.patient.patientID = patientID;
+        // console.log('Patient ID:', this.$store.patient.patientID);
+    },
     mounted() {},
     updated() {},
     methods: {}

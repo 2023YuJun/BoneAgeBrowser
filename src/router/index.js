@@ -4,7 +4,7 @@ const routes = [
     {
         path: '/',
         name: '',
-        redirect: '/main'
+        redirect: '/main?patientID=0'
     },
     {
         path: '/demo',
