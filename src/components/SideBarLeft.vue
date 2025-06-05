@@ -4,7 +4,7 @@
         <button class="btn btn-dash btn-primary m-2" @click="$refs.fileInput.click()">加载本地 DICOM 图像</button>
         <input type="file" ref="fileInput" accept=".dcm" class="hidden" @change="loadLocalDicom" />
         <!-- 加载 Web 的 DICOM 图像 -->
-        <div v-for="(patient, index) in patients" :key="index" class="card m-2 p-2 bg-base-100 shadow-sm flex flex-row items-center" @click="loadWebDicom(patient.downLoadUrl)">
+        <div v-for="(patient, index) in patients" :key="index" class="card m-2 p-2 bg-base-100 shadow-sm flex flex-row items-center" @click="loadWebDicom(patient)">
             <div class="flex-1 flex items-center">
                 <div class="avatar">
                     <div class="w-16 rounded text-center">
@@ -48,9 +48,15 @@ export default {
             this.$emit('load-local-dicom', blob);
         },
         // 加载 Web 的 DICOM 图像
-        loadWebDicom() {
-            const url = 'http://localhost:8081/1.2.840.113619.2.203.4.604660980.1627231180.252286.dcm';
-            this.$emit('load-web-dicom', url);
+        loadWebDicom(patient) {
+            this.$store.patient.inferenceID = patient.inferenceID;
+            this.$store.patient.birthDate = patient.brithDate; // 后端变量命名有误
+            this.$store.patient.sex = patient.sex;
+            // // 如果能访问到 PACS 则用这段代码
+            // const dicomUrl = patient.downLoadUrl;
+            // 如果不能访问 PACS 则用这段代码
+            const dicomUrl = 'http://localhost:8081/1.2.840.113619.2.203.4.604660980.1627231180.252286.dcm';
+            this.$emit('load-web-dicom', dicomUrl);
         },
         // 获取患者信息
         async getPatientInfo() {
