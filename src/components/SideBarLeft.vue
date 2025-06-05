@@ -4,16 +4,17 @@
         <button class="btn btn-dash btn-primary m-2" @click="$refs.fileInput.click()">加载本地 DICOM 图像</button>
         <input type="file" ref="fileInput" accept=".dcm" class="hidden" @change="loadLocalDicom" />
         <!-- 加载 Web 的 DICOM 图像 -->
-        <div class="card m-2 p-2 bg-base-100 shadow-sm flex flex-row items-center" @click="loadWebDicom">
+        <div v-for="(patient, index) in patients" :key="index" class="card m-2 p-2 bg-base-100 shadow-sm flex flex-row items-center" @click="loadWebDicom(patient.downLoadUrl)">
             <div class="flex-1 flex items-center">
                 <div class="avatar">
-                    <div class="w-24 rounded">
-                        <img src="/preview-1.png" />
+                    <div class="w-16 rounded text-center">
+                        <font-awesome-icon class="fa-4x" :icon="['fas', 'file']" />
                     </div>
                 </div>
             </div>
             <div class="flex-1 text-center">
-                <p class="text-lg">Demo 1</p>
+                <p class="text-sm">PID: {{ patient.patientID }}</p>
+                <p class="text-sm">inference: {{ patient.inferenceID }}</p>
             </div>
         </div>
     </div>
@@ -27,10 +28,14 @@ export default {
         return {};
     },
     data() {
-        return {};
+        return {
+            patients: []
+        };
     },
     created() {},
-    mounted() {},
+    async mounted() {
+        await this.getPatientInfo();
+    },
     updated() {},
     methods: {
         // 加载本地的 DICOM 图像
@@ -46,6 +51,12 @@ export default {
         loadWebDicom() {
             const url = 'http://localhost:8081/1.2.840.113619.2.203.4.604660980.1627231180.252286.dcm';
             this.$emit('load-web-dicom', url);
+        },
+        // 获取患者信息
+        async getPatientInfo() {
+            const patientID = this.$store.patient.patientID;
+            const patientInfo = await this.$api.view.getPatientInfo({ id: patientID });
+            this.patients = patientInfo.patients;
         }
     }
 };
