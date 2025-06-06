@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { init as coreInit, RenderingEngine, Enums, volumeLoader, cornerstoneStreamingImageVolumeLoader } from '@cornerstonejs/core';
+import { init as coreInit, RenderingEngine, Enums } from '@cornerstonejs/core';
 import { init as dicomImageLoaderInit } from '@cornerstonejs/dicom-image-loader';
 import { init as cornerstoneToolsInit, ToolGroupManager, PanTool, ZoomTool, WindowLevelTool, LengthTool, annotation, Enums as csToolsEnums, addTool } from '@cornerstonejs/tools';
 
@@ -115,7 +115,6 @@ export default {
             addTool(ZoomTool);
             toolGroup.addTool(ZoomTool.toolName);
             toolGroup.addViewport(this.viewportId);
-            // ctrl + 鼠标滚轮缩放
             toolGroup.setToolActive(ZoomTool.toolName, {
                 bindings: [
                     {
