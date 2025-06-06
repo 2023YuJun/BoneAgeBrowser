@@ -35,7 +35,9 @@
                         <tbody class="overflow-auto">
                             <tr v-for="(item, index) in currentBoneData" :key="index">
                                 <td>{{ item.showName }}</td>
-                                <td>{{ item.score }}</td>
+                                <td class="w-1/2">
+                                    <input v-model="item.score" type="text" placeholder="" class="input input-xs" />
+                                </td>
                             </tr>
                         </tbody>
                     </table>
